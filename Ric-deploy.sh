@@ -37,7 +37,7 @@ sudo systemctl restart docker
 sudo mkdir -p /root/ric-dep/deploy-script/
 
 sudo echo "
-#!/bin/sh -xvf
+#!/bin/sh
 logger -s "Starting master.sh execution"
 echo \"Starting master.sh execution\"
 #Validation  kubernetes
