@@ -17,4 +17,4 @@ testExecutionSteps:
            command: "REST -operation get -data ${api_payload_DUT} -apiHost ${host_id_DUT} -apiPort ${api_port_DUT} -apiUrl ${api_url_container_health_DUT}"
            expectedResult:
              - present:
-                 - '200'
+                 - 'ABC'
