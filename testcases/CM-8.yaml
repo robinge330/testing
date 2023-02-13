@@ -1,0 +1,20 @@
+testCaseDescription: 'Container Health'
+testCaseId: 'CM-8'
+testPriority: 'P2'
+testCategory: 'Generic Validation'
+testType: 'GenericValidationAPI'
+#Test call will be executed on nodes in topology as per nodeSelection
+#Only USM nodes are part of this test case
+nodeSelection:
+      # Loop for all USM routers in topology
+      - loop:
+          - '${usm_nodes_count},1'
+          - '${usm_node${count1}_name}'
+# Expected result is hostname properly configured at USM node
+testExecutionSteps:
+   root:
+       - cmdLine:
+           command: "REST -operation get -data ${api_payload_DUT} -apiHost ${host_id_DUT} -apiPort ${api_port_DUT} -apiUrl ${api_url_container_health_DUT}"
+           expectedResult:
+             - present:
+                 - '200'
